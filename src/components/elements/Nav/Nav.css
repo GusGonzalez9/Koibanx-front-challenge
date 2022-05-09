@@ -1,0 +1,42 @@
+#nav.container {
+    height: 80px;
+    background-color: whitesmoke;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#nav.container > div {
+    padding: 0 10px;
+}
+
+#nav button {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 4px;
+}
+
+#nav .btn-account {
+    font-size: 24px;
+
+}
+
+#nav button:hover {
+    background-color: #e7e7e7;
+}
+
+#nav .btn-nav {
+    font-size: 20px;
+    color: #4E4E4E;
+    font-weight: bold;
+}
+
+
+#nav .btn-nav.active {
+    color: #8620F3;
+}
