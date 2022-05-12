@@ -12,7 +12,7 @@ Todo el código de la aplicación puede ser modificado. Los assets se encuentran
 
 No es necesario que el layout sea responsive.
 
-En el root del repositorio se encuentra un archivo que se llama swagger.yaml que contiene la especificación de la API. Puedes visualizarlo importandolo en https://editor.swagger.io
+En el root del repositorio se encuentra un archivo que se llama _swagger.yaml_ que contiene la especificación de la API. Puedes visualizarlo importandolo en https://editor.swagger.io
 
 ## Definición funcional
 
@@ -47,7 +47,7 @@ Se sumará puntos extra por cada ítem cumplido de los siguientes:
 - Repositorio público subido a GitHub o Gitlab.
 - Link a la aplicación funcionando.
 
-Enviar mail con ambos links a challenges@koibanx.com
+Enviar mail con ambos links a [challenge@koibanx.com](mailto:challenge@koibanx.com?subject=[Frontend]%20Exchange%20Challenge)
 
 ## Consultas
-Por dudas o consultas, escribir a challenge@koibanx.com
+Por dudas o consultas, escribir a [challenge@koibanx.com](mailto:challenge@koibanx.com?subject=[Frontend]%20Consulta)
