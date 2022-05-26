@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import SuccessModal from '../elements/SuccessModal/SuccessModal';
+import ConvertLayout from '../Layouts/ConvertLayout/ConvertLayout';
 
 const Convert = () => {
-  const [successVisible, setSuccessVisible] = useState(false);
 
-  return (<div>
-    <SuccessModal visible={successVisible} onClose={() => setSuccessVisible(false)}/>
-  </div>)
+  return (
+    <ConvertLayout />
+  )
 }
 
 export default Convert;

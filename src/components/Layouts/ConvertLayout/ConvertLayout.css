@@ -1,0 +1,80 @@
+@import "../../../App.css";
+
+.convertLayout-container{
+    max-width: 600px;
+    margin: 3rem auto;
+    
+}
+
+.convert-title{
+    font-size: 1.6rem;
+    color: var(--secondary);
+    text-align: start;
+    width: 65%;
+}
+
+.icon-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.icon-box{
+     height: 50; display: flex; justify-content: center; align-items: center; width: 125px 
+}
+
+.icon-convert{
+    transform: rotate(90deg)
+}
+
+.icon-button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.label-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-label-title{
+    color:var(--secondary);
+    font-weight: bold;
+}
+
+.p-label{
+    color:var(--secondary);
+    font-size: 14px;
+}
+
+.price-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-container p {
+    color:var(--secondary);
+    font-size: 14px;
+}
+
+.currencybalance-container{
+}
+
+.convert-timer p{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color:var(--primary);
+    font-weight: bold;
+}
+
+ .button-container-convert{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}

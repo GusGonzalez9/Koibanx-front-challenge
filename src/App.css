@@ -1,5 +1,8 @@
 
-
 :root {
   --primary: #8620F3;
+  --secondary:#4E4E4E;
+  --background-secondary: #ececec;
+  --primary-ligth:#dbd3e3;
+  --test: #c4c3c4 ;
 }

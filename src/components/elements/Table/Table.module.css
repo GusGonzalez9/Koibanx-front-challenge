@@ -1,0 +1,68 @@
+@import "../../../App.css";
+
+.tableContainer{
+    width: 100%;
+}
+
+.tableTitles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title{
+    font-size: 1.4rem;
+    color:var(--secondary);
+    font-weight: bold;
+    text-align: left;
+}
+
+.showAllAction{
+    font-weight: bold;
+    color:var(--primary);
+    text-align: right;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+th, td {
+    padding: 10px;
+    width: 200px;
+  }
+
+
+.tableHeader th {
+    width: 180px;
+  }
+
+tr.firstRow>th{
+    padding-bottom: 2rem;
+}
+
+tr > td{
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+    color:var(--secondary);
+    opacity: .8;
+}
+td.showTransactionRow{
+    color:#60b49c ;
+    cursor: pointer;
+}
+
+.tableHeader tr th{
+    font-size: 1.3rem;
+    text-align: start;
+    color:var(--secondary);
+    opacity: .8;
+}
+
+.currencyRow{
+    display: flex;
+    align-items: center;
+}
+
+.currencyRow img{
+    width: 30px;
+    margin-right: 10px;
+}

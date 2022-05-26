@@ -11,14 +11,15 @@ const Nav = () => {
   return (
     <div id={'nav'} className={'container'}>
       <div>
-        <img src={logo} alt={'Koibanx'}/>
+        <Link to={'/'}><img src={logo} alt={'Koibanx'} />
+        </Link>
       </div>
       <div>
         <Link to={'/'}><button className={`btn-nav${match ? ' active' : ''}`}>Wallet</button></Link>
         <Link to={'/convert'}><button className={`btn-nav${!match ? ' active' : ''}`}>Convert</button></Link>
       </div>
       <div>
-        <button className={'btn-account'}><AiOutlineUser/></button>
+        <button className={'btn-account'}><AiOutlineUser /></button>
       </div>
     </div>
   );
