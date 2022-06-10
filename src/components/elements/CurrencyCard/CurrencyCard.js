@@ -10,7 +10,7 @@ const CurrencyCard = ({ currency, total }) => {
                 <p className={styles.units}>{textMapper[currency]}</p>
             </div>
         </div>
-    )
+    ) 
 }
 
 export default CurrencyCard
