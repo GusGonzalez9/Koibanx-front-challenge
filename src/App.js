@@ -10,10 +10,10 @@ import Nav from './components/elements/Nav/Nav';
 function App() {
   return (
     <div className="App">
-      <Nav/>
+      <Nav />
       <Routes>
         <Route path="/" element={<Wallet />} />
-        <Route path="convert" element={<Convert />} />
+        <Route path="/convert" element={<Convert />} />
       </Routes>
     </div>
   );
