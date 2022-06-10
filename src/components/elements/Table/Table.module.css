@@ -23,6 +23,8 @@
     text-align: right;
     font-size: 1.4rem;
     cursor: pointer;
+    border:none;
+    background-color: transparent;
 }
 
 th, td {

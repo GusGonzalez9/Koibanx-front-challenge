@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Button from '../../elements/Button/Button';
 import CurrencyBalance from '../../elements/CurrencyBalance/CurrencyBalance';
 import SuccessModal from '../../elements/SuccessModal/SuccessModal';
-import './ConvertLayout.css';
 import { BiTransfer } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
 import { currencyOptions } from '../../../utils/currencyConstants';
 import { balanceService } from '../../../service/balanceService';
 import { convertService } from '../../../service/convertService';
 import { textMapper } from '../../../utils/textMapper';
-
+import { useNavigate } from 'react-router-dom';
+import styles from './ConvertLayout.module.css'
 const ConvertLayout = () => {
     const [successVisible, setSuccessVisible] = useState(false);
     const [counter, setCounter] = useState(15);
@@ -20,15 +20,17 @@ const ConvertLayout = () => {
     const [secondaryCurrency, setSecondaryCurrency] = useState('btc');
     const [availableAmount, setAvailableAmount] = useState()
     const [error, setError] = useState()
+    const [availableGetPrice, setAvailableGetPrice] = useState(false)
+    const history = useNavigate()
 
     useEffect(() => {
-        if (counter > 0) {
-            setTimeout(() => setCounter(counter - 1), 1000)
-        } else {
-            getRate();
-            setCounter(15)
-        }
-    }, [counter])
+        let timer = setTimeout(() => {
+            if (counter > 0) { return setCounter(counter - 1) } else {
+                setAvailableGetPrice(true)
+            }
+        }, 1000)
+        return (() => clearTimeout(timer))
+    })
 
 
     useEffect(() => {
@@ -46,6 +48,11 @@ const ConvertLayout = () => {
         setRate(rate)
     }
 
+    const handlerGetRate = ()=>{
+        getRate()
+        setCounter(15)
+        setAvailableGetPrice(false)
+    }
 
     const onChangeCurrency = (event) => {
         setPrincipalCurrency(event.target.value)
@@ -96,35 +103,36 @@ const ConvertLayout = () => {
     }
 
     return (
-        <div className='convertLayout-container'>
-            <p className='convert-title'>Convierta la cantidad que desee en una moneda diferente.</p>
-            <div className='currencybalance-container'>
-                <div className='label-container'>
-                    <p className='p-label-title'>Desde</p>
-                    <p className='p-label'>Disponible en la billetera <strong>{availableAmount}</strong></p>
+        <div className={styles.convertLayoutContainer}>
+            <p className={styles.convertTitle}>Convierta la cantidad que desee en una moneda diferente.</p>
+            <div className={styles.currencyBalanceContainer}>
+                <div className={styles.labelContainer}>
+                    <p className={styles['p-label-title']}>Desde</p>
+                    <p className={styles['p-label']}>Disponible en la billetera <strong>{availableAmount}</strong></p>
                 </div>
                 <CurrencyBalance error={error} currency={principalCurrency} onChangeAmount={onChangeAmountToConvert} onChangeCurrency={onChangeCurrency} maxBalanceAction={maxBalanceAction} amount={amountToConvert} options={currencyOptions} />
             </div>
 
-            <div className='icon-container'>
-                <div className='icon-box'><button className='icon-button' onClick={onSwap} > <BiTransfer className='icon-convert' style={{ transform: [{ rotateY: '90deg' }] }} size={35} color='#4E4E4E' /></button></div>
+            <div className={styles['icon-container']}>
+                <div className={styles['icon-box']}><button className={styles['icon-button']} onClick={onSwap} > <BiTransfer className={styles['icon-convert']} style={{ transform: [{ rotateY: '90deg' }] }} size={35} color='#4E4E4E' /></button></div>
             </div>
 
             <div className='currencybalance-container'>
                 <div className='label-container'>
-                    <p className='p-label-title'>Para</p>
+                    <p className={styles['p-label-title']}>Para</p>
                 </div>
                 <CurrencyBalance onChangeCurrency={onChangeSecondaryCurrency} currency={secondaryCurrency} amount={convertAmount} options={currencyOptions} />
-                <div className='price-container'>
+                <div className={styles['price-container']}>
                     <p>Precio</p>
                     <p>1 {textMapper[principalCurrency]} = {rate} {textMapper[secondaryCurrency]} </p>
                 </div>
             </div>
-            <div className='convert-timer'>
+            <div className={styles['convert-timer']}>
                 <p><BsArrowRight size={20} style={{ marginRight: 10 }} /> La cotizacion se actualizará en {counter} segundos</p>
+                <Button text={"Solicitar cotización"} onClick={() => handlerGetRate()} disabled={!availableGetPrice}/>
             </div>
-            <div className='button-container-convert'>
-                <Button text={"Volver"} url='/' redirect className='button-container-secondary' />
+            <div className={styles['button-container-convert']}>
+                <Button text={"Volver"} onClick={() => history.push('/')} className='button-container-secondary' />
                 <Button text={"Convertir"} disabled={!!error} onClick={onSubmit} />
             </div>
             <SuccessModal visible={successVisible} onClose={() => setSuccessVisible(false)} />

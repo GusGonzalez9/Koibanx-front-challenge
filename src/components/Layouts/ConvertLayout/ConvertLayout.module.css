@@ -1,11 +1,11 @@
 @import "../../../App.css";
 
-.convertLayout-container{
+.convertLayoutContainer{
     max-width: 600px;
     margin: 3rem auto;
 }
 
-.convert-title{
+.convertTitle{
     font-size: 1.6rem;
     color: var(--secondary);
     text-align: start;
@@ -44,7 +44,7 @@
     font-weight: bold;
 }
 
-.p-label{
+.pLabel{
     color:var(--secondary);
     font-size: 14px;
 }
@@ -62,12 +62,23 @@
 .currencybalance-container{
 }
 
+.convert-timer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.convert-timer button{
+    width: 30%;
+}
+
 .convert-timer p{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     color:var(--primary);
     font-weight: bold;
+    flex-grow: 1;
 }
 
  .button-container-convert{

@@ -16,6 +16,10 @@
     font-weight: bold; 
 }
 
+.button-container:hover{
+    opacity: 0.8;
+}
+
 .button-container-secondary{
     background-color: var(--primary-ligth);
     color:var(--primary)

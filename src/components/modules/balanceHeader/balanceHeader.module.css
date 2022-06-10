@@ -1,0 +1,58 @@
+
+.balanceContainer{
+    margin-bottom: 1rem;
+    flex-grow: .2;
+}
+
+
+.balanceTitle{
+    font-size: 2.2rem;
+    color:var(--secondary);
+    margin-bottom: 10px;
+    font-weight:200;
+   }
+   
+   .balanceAmount{
+       font-size: 2.8rem;
+       color:var(--primary);
+       font-weight: bold;
+       margin:0;
+       margin-right: 5px;
+   }
+   
+   .balanceHideButton{
+       display: flex;
+       border:none;
+       align-items: center;
+       cursor: pointer;
+       gap:10px;
+       background-color: transparent;
+   }
+   
+   .balanceAmountContainer{
+     display: flex;
+     align-items: flex-end;
+     justify-content: flex-start;
+   }
+   
+   .balanceHideButton p{
+     color:var(--secondary)
+   }
+   
+   .balanceCurrency{
+     font-size: 1.5rem ;
+     color: var(--primary);
+     font-weight: bold;
+     margin:0;
+     margin-bottom: 5px;
+     margin-left: 10px;
+   }
+   
+   .balanceAmountCentavos{
+     font-size: 1.5rem ;
+     color: var(--primary);
+     font-weight: bold;
+     margin:0;
+     margin-bottom: 5px;
+     opacity: .6;
+   }
